@@ -79,7 +79,7 @@ The logic is to select the names and the count of the courses which is filtered 
 - session.query(func.count(database_class.courses),database_class.name).filter_by(grade=1.0).group_by(database_class.name).having(func.count(database_class.courses)>= 3.0) 
 
 ### Future Work 
-- The read of the files can be separated into chunks 
+- Reading file in chunks and processing the chunks inorder to efficiently use the memory. 
 - Finding an optimal number for the bulk insertion based on the memory availability. 
 - Looking for other ideas to better the approach. 
 
