@@ -74,7 +74,13 @@ The following image indicates the raw SQL statement on the pgAdmin interface.
 ![raw_sql](test_images/test_screenshots/sql_raw.png)
 
 ### Query 
+
+The logic is to select the names and the count of the courses which is filtered by their respective grades where it is equal to 1.0 and it is grouped by their names where the count of the courses is atleast 3.0 . 
 - session.query(func.count(database_class.courses),database_class.name).filter_by(grade=1.0).group_by(database_class.name).having(func.count(database_class.courses)>= 3.0) 
+
+### Future Work 
+- The read of the files can be separated into chunks 
+- Looking for other ideas to better the approach. 
 
 ### References 
 - https://pypi.org/project/SQLAlchemy/
