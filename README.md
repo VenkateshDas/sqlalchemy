@@ -92,9 +92,10 @@ The logic is to select the names and the count of the courses which is filtered 
 - Looking for other ideas to better the approach. 
 
 ### References 
-- [](https://pypi.org/project/SQLAlchemy/)
-- [](https://www.tutorialspoint.com/sqlalchemy/index.html)
-- [](https://towardsdatascience.com/sqlalchemy-python-tutorial-79a577141a91)
-- [](https://leportella.com/sqlalchemy-tutorial.html)
+- [PyPI project](https://pypi.org/project/SQLAlchemy/)
+- [SQLALchemy tutorial point](https://www.tutorialspoint.com/sqlalchemy/index.html)
+- [https://towardsdatascience.com/sqlalchemy-python-tutorial-79a577141a91](https://towardsdatascience.com/sqlalchemy-python-tutorial-79a577141a91)
+- [(https://leportella.com/sqlalchemy-tutorial.html](https://leportella.com/sqlalchemy-tutorial.html)
+
 
 
