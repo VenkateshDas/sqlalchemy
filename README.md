@@ -63,20 +63,23 @@ To solve the tasks I created two solutions.
 
 The SQLite implementation is provided in the Colab notebook version. The PostgreSQL version is provided in the src folder. The usage of this folder is provided above. 
 
-### Read dataset 
+### Read dataset
 
 - The parsing is done by in built CSV reader object in python. It is implemented in the file named insert_data_db.py.  
 - The parsing of the CSV dataset is done using CSV reader module instead of using Pandas. Due to the objective that there is no manipulation to be done on the dataset and this also eliminates the overhead caused by Pandas. 
 - The csv.reader is an iterator that read the rows one by one and not clogging the whole memory.
 - The function named write_data_to_database() implements this function. 
 
-*code snippet for reading 
-        with open(file_path,'r') as f :
+
+*code snippet for reading*
+  
+
+     with open(file_path,'r') as f :
             reader = csv.reader(f, delimiter=',') # An iterator object
             next(reader) #skipping the header
             print("CSV File parsed")
             for row in reader:  # reading the rows one by one for efficiency
-     
+            
 
 ### Insert data to Database 
 
@@ -86,7 +89,7 @@ The SQLite implementation is provided in the Colab notebook version. The Postgre
 - Using the ORM functionality in SQLAlchemy of bulk insert, the addition of data to the database can be optimised by sending bulk data at a point in time. And then committed to the database. 
 - This can be carried out for memory efficiency. 
 
-*code snippet for insertion into database 
+*code snippet for insertion into database* 
 
     # appending the table objects to the list 
     object.append(Task(
@@ -116,9 +119,10 @@ The SQLite implementation is provided in the Colab notebook version. The Postgre
 - The query is implemented in the file named query.py under the function named custom_query(). 
 - The logic is to select the names and the count of the courses which is filtered by their respective grades where it is equal to 1.0 and it is grouped by their names where the count of the courses is at least 3.0. 
 
-    session.query(func.count(database_class.courses),database_class.name).filter_by(grade=1.0).group_by(database_class.name).having(func.count(database_class.courses)>= 3.0) 
-    
-- The query solves the task 3. 
+*code snippet for query*
+
+	session.query(func.count(database_class.courses),database_class.name).filter_by(grade=1.0).group_by(database_class.name).having(func.count(database_class.courses)>= 3.0)` 
+        
 
 ### Observations 
 
