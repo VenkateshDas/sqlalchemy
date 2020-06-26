@@ -61,24 +61,30 @@ The parsing of the CSV dataset is done using csv reader module instead of using 
 
 I have attached the usage of the RAM while doing a one by one addition of the user to the database and by doing a bulk insertion to the database. 
 
-1. One by one insertion 
+**One by one insertion**
 
 ![screenshot](test_images/test_screenshots/memory_random_test_big_no_bulk.png)
 
-2. Bulk insertion 
+**Bulk insertion** 
 
 ![screenshot](test_images/test_screenshots/memory_random_test_big.png)
 
 By doing a bulk insertion the usage of the RAM is reduced during the isertion to the database. 
 
-- The usage of the PostgreSQL was useful in creating a local server and having an user interface to deal with the database. 
+The usage of the PostgreSQL was useful in creating a local server and having an user interface to deal with the database. 
 The following image indicates the raw SQL statement on the pgAdmin interface. 
 ![raw_sql](test_images/test_screenshots/sql_raw.png)
+
+The insertion of large datasets more than 5 million lines of data takes a significantly longer time but the memory usage due to line by line process and bulk insert. 
+
+The results on the experiment runs have been attahced in the [Test images folder](test_images/test_screenshots)
 
 ### Query 
 
 The logic is to select the names and the count of the courses which is filtered by their respective grades where it is equal to 1.0 and it is grouped by their names where the count of the courses is atleast 3.0 . 
-- session.query(func.count(database_class.courses),database_class.name).filter_by(grade=1.0).group_by(database_class.name).having(func.count(database_class.courses)>= 3.0) 
+
+	session.query(func.count(database_class.courses),database_class.name).filter_by(grade=1.0).group_by(database_class.name).having(func.count(database_class.courses)>= 3.0) 
+
 
 ### Future Work 
 - Reading file in chunks and processing the chunks inorder to efficiently use the memory. 
@@ -86,9 +92,9 @@ The logic is to select the names and the count of the courses which is filtered 
 - Looking for other ideas to better the approach. 
 
 ### References 
-- https://pypi.org/project/SQLAlchemy/
-- https://www.tutorialspoint.com/sqlalchemy/index.htm
-- https://towardsdatascience.com/sqlalchemy-python-tutorial-79a577141a91
-- https://leportella.com/sqlalchemy-tutorial.html
+- [](https://pypi.org/project/SQLAlchemy/)
+- [](https://www.tutorialspoint.com/sqlalchemy/index.html)
+- [](https://towardsdatascience.com/sqlalchemy-python-tutorial-79a577141a91)
+- [](https://leportella.com/sqlalchemy-tutorial.html)
 
 
