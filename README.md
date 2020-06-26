@@ -61,11 +61,11 @@ The parsing of the CSV dataset is done using csv reader module instead of using 
 
 I have attached the usage of the RAM while doing a one by one addition of the user to the database and by doing a bulk insertion to the database. 
 
-- One by one insertion </br>
+1. One by one insertion 
 
 ![screenshot](test_images/test_screenshots/memory_random_test_big_no_bulk.png)
 
-- Bulk insertion </br>
+2. Bulk insertion 
 
 ![screenshot](test_images/test_screenshots/memory_random_test_big.png)
 
