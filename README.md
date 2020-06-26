@@ -1,6 +1,5 @@
 # SQLAlchemy 
 This repository is created to showcase the task provided by Martin Glauer. 
-
 ## **Tasks:**
 
 	1. Create a database schema using SQLAlchemy  that can store the data provided in the file. 
@@ -17,26 +16,38 @@ This repository is created to showcase the task provided by Martin Glauer.
 
 ### Files
 - A CSV file that contains the data contains the data that has to be added to the database on which the query is carried out. 
+- A database in the PostgreSQL server
 
 ### Usage : 
 
-usage: main.py  -h --db_name DB_NAME --csv_file_path CSV_FILE_PATH
+    python main.py  -h --db_name DB_NAME --csv_file_path CSV_FILE_PATH
+
+#### Example : 
+
+    python main.py --db_name tasks --csv_file_path test_data_files/task.csv
 
 SQLAlchemy Task code
 
-optional arguments:
-  -h, --help            show this help message and exit
-  --db_name DB_NAME -->"Database name to be connected"
-  --csv_file_path CSV_FILE_PATH  --> "File path of the CSV dataset"
+    optional arguments:
+      -h, --help            show this help message and exit
+      --db_name DB_NAME "Database name to be connected"
+      --csv_file_path CSV_FILE_PATH "File path of the CSV dataset"
 
 DB_NAME is the database that has been created in the Postgres server to which the user wants to connect for further processing. 
 
 ## Procedure
 
+### Intro 
+An image that explains the reason for the usage of the SQLAlchemy. It creates a connection  between the program and the database for interaction. The Object Relational Mapping functionality helps to code in python without the hassle as in raw SQL and be more pythonic. 
+
+![sqlalchemy](test_images/session.png)
+
 ### Database
 To solve the tasks I created two solutions. 
 1. Using sqlite to process small datasets that can be run without creating a server. I wanted to create an initial working prototype so I chose to develop in the Colab notebook environment. 
 2. The second solution was to create a server locally using PostgreSQL . PostgreSQL proivdes a dashboard to manage the databases, creates the transactions on persistent memory and clears the RAM.  
+
+The SQLite implementation is provided in the colab notebook version. The PostgreSQL version is provided in the src folder. The usage of this folder is provided above. 
 
 ### Parsing 
 The parsing of the CSV dataset is done using csv reader module instead of using Pandas. Due to the objective that there is no manipulation to be done on the dataset and this also eleminates the overhead caused by Pandas. 
@@ -48,3 +59,11 @@ The parsing of the CSV dataset is done using csv reader module instead of using 
 
 ### Query 
 - session.query(func.count(database_class.courses),database_class.name).filter_by(grade=1.0).group_by(database_class.name).having(func.count(database_class.courses)>= 3.0) 
+
+### References 
+- https://pypi.org/project/SQLAlchemy/
+- https://www.tutorialspoint.com/sqlalchemy/index.htm
+- https://towardsdatascience.com/sqlalchemy-python-tutorial-79a577141a91
+- https://leportella.com/sqlalchemy-tutorial.html
+
+
