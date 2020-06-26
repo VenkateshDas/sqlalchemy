@@ -74,8 +74,14 @@ def main():
 
     ''' )
 
+    start_time = time.time()
+
     custom_query_result = custom_query(Task , session )             # SQLAlchemy ORM based query call
     print(custom_query_result)
+
+    end_time = time.time() - start_time
+
+    print("Total time to fetch the result for the given query : {} ".format(end_time))
 
     session.close()
 

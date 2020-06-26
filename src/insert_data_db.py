@@ -37,18 +37,20 @@ def write_data_to_database(file_path,session):
             try:
 
                 lines += 1
+                # appending the table objects to the list
                 object.append(Task(
                             name = row[0],
                             grade = row[1],
                             courses = row[2]
                             ))
-
+                # For small files
                 if lines == numline-1:
                     session.bulk_save_objects(object)
                     session.commit()
                     print("Data Added")
                     break
 
+                # For large files insert after 1000 reads
                 elif lines % 1000 == 0 :
 
                     session.bulk_save_objects(object)
