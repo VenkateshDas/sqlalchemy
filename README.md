@@ -1,5 +1,7 @@
 # SQLAlchemy 
 This repository is created to showcase the task provided by Martin Glauer. 
+
+Please read the [Github Page](https://venkateshdas.github.io/sqlalchemy/) for better aesthetics. 
 ## **Tasks:**
 
     1. Create a database schema using SQLAlchemy that can store the data provided in the file. 
