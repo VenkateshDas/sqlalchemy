@@ -1,7 +1,28 @@
+'''
+
+__author__    = "Venkatesh Murugadas"
+__date__      = "26.06.2020"
+__version__   = "1.0"
+__maintainer__= "Venkatesh Murugadas"
+__email__     = "venkatesh.murugadas@st.ovgu.de"
+__status__    = "Draft"
+
+'''
+
 import csv
 from schema import Task
 
 def write_data_to_database(file_path,session):
+    '''
+    This function parses the dataset and inserts the data to the database connected.
+    The file is parsed and read line by line to reduce the usage of the RAM during the whole process.
+
+    params : file_path : The path to the CSV dataset
+            session   : The session created for the connecting to the database
+
+    return : lines : The total number of lines written in the dataset
+
+    '''
 
     lines = 0
     object = []
