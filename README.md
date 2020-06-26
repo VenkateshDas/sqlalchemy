@@ -15,7 +15,7 @@ This repository is created to showcase the task provided by Martin Glauer.
 - Python 3
 
 ### Files
-- A CSV file that contains the data contains the data that has to be added to the database on which the query is carried out. 
+- A CSV file that contains the data which has to be added to the database on which the query is carried out. 
 - A database in the PostgreSQL server
 
 ### Usage : 
