@@ -67,7 +67,11 @@ I have attached the usage of the RAM while doing a one by one addition of the us
 -Bulk insertion 
 ![screenshot](test_images/test_screenshots/memory_random_test_big.png)
 
-By doing a bulk insertion the usage of the RAM is reduced during the isertion to the database. 
+	By doing a bulk insertion the usage of the RAM is reduced during the isertion to the database. 
+
+- The usage of the PostgreSQL was useful in creating a local server and having an user interface to deal with the database. 
+The following image indicates the raw SQL statement on the pgAdmin interface. 
+![raw_sql](test_images/test_screenshots/raw_sql.png)
 
 ### Query 
 - session.query(func.count(database_class.courses),database_class.name).filter_by(grade=1.0).group_by(database_class.name).having(func.count(database_class.courses)>= 3.0) 
