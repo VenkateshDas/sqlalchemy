@@ -80,6 +80,7 @@ The logic is to select the names and the count of the courses which is filtered 
 
 ### Future Work 
 - The read of the files can be separated into chunks 
+- Finding an optimal number for the bulk insertion based on the memory availability. 
 - Looking for other ideas to better the approach. 
 
 ### References 
