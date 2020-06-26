@@ -1,4 +1,4 @@
-# sqlalchemy 
+# SQLAlchemy 
 This repository is created to showcase the task provided by Martin Glauer. 
 
 ## **Tasks:**
