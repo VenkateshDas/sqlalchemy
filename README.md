@@ -57,6 +57,18 @@ The parsing of the CSV dataset is done using csv reader module instead of using 
 - Using the ORM functionality in SQLAlchemy of bulk insert, the addition of data to databse can be optimised by sending bulk data at a point in time. And then commited to the database. 
 - This can be carried out for computational efficency. 
 
+### Observations 
+
+I have attached the usage of the RAM while doing a one by one addition of the user to the database and by doing a bulk insertion to the database. 
+
+- One by one insertion 
+![screenshot](test_images/test_screenshots/memory_random_test_big_no_bulk.png)
+
+-Bulk insertion 
+![screenshot](test_images/test_screenshots/memory_random_test_big.png)
+
+By doing a bulk insertion the usage of the RAM is reduced during the isertion to the database. 
+
 ### Query 
 - session.query(func.count(database_class.courses),database_class.name).filter_by(grade=1.0).group_by(database_class.name).having(func.count(database_class.courses)>= 3.0) 
 
