@@ -61,15 +61,15 @@ The parsing of the CSV dataset is done using csv reader module instead of using 
 
 I have attached the usage of the RAM while doing a one by one addition of the user to the database and by doing a bulk insertion to the database. 
 
-- One by one insertion 
+#### One by one insertion 
 ![screenshot](test_images/test_screenshots/memory_random_test_big_no_bulk.png)
 
 -Bulk insertion 
 ![screenshot](test_images/test_screenshots/memory_random_test_big.png)
 
-	By doing a bulk insertion the usage of the RAM is reduced during the isertion to the database. 
+By doing a bulk insertion the usage of the RAM is reduced during the isertion to the database. 
 
-- The usage of the PostgreSQL was useful in creating a local server and having an user interface to deal with the database. 
+#### The usage of the PostgreSQL was useful in creating a local server and having an user interface to deal with the database. 
 The following image indicates the raw SQL statement on the pgAdmin interface. 
 ![raw_sql](test_images/test_screenshots/sql_raw.png)
 
