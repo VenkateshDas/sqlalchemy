@@ -62,6 +62,7 @@ def write_data_to_database(file_path,session):
                     break
 
             except Exception as e:
-                 print("Error at line {} ".format(e))
-
+                 print("Unexpected error occured at line {} . Please look into the issue to make sure the program is running".format(lines))
+                 print("The error occured : {}".format(e))
+                 
     return lines
