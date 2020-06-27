@@ -12,7 +12,8 @@ Please read the [Github Page](https://venkateshdas.github.io/sqlalchemy/) for be
 
 ### Packages
 
- - To run the above code PostgreSQL and psycopg2 are required to create a database. 
+- The code was tested with PostgreSQL database
+- psycopg2 driver to connect database with python
 - SQLAlchemy 
 - Python 3
 
