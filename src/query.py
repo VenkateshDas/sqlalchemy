@@ -13,13 +13,7 @@ from sqlalchemy.sql import func
 
 def custom_query(database_class , session):
     '''
-    This function is built for the custom query in SQLAlchemy
-
-    SQL statement :
-
-    SELECT Count(courses) , name
-    FROM task_table
-    WHERE grade = 1.0 GROUP BY name HAVING Count(courses) >= 3.0
+    This function finds the students who have grades 1.0 in atleast 3 courses.
 
     params : database_class : The class which defines the table
              session        : The session created for the connecting to the database

@@ -27,4 +27,4 @@ courses = ['Programming', 'Physics', 'Science', 'Chemistry', 'Biology', 'English
 df['courses'] = np.random.choice(list(courses), size) # Filling the courses randomly
 
 f = open('random_test_small.csv', 'w')
-df.to_csv( f , encoding='utf-8',index=False) #index is False to avoid the id column from the Dataframe. 
+df.to_csv( f , encoding='utf-8',index=False) #index is False to avoid the id column from the Dataframe.

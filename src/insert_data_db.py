@@ -28,6 +28,7 @@ def write_data_to_database(file_path,session):
     object = []
     file = open(file_path,'r')
     numline = len(file.readlines())
+
     with open(file_path,'r') as f :
 
         reader = csv.reader(f, delimiter=',')
@@ -43,21 +44,22 @@ def write_data_to_database(file_path,session):
                             grade = row[1],
                             courses = row[2]
                             ))
-                # For small files
-                if lines == numline-1:
-                    session.bulk_save_objects(object)
-                    session.commit()
-                    print("Data Added")
-                    break
 
-                # For large files insert after 1000 reads
-                elif lines % 1000 == 0 :
+                # For lists with length 1000
+                if lines % 1000 == 0 :
 
-                    session.bulk_save_objects(object)
+                    session.bulk_save_objects(object) #insertion to database in bulk
                     session.commit()
                     print("Number of lines added : {}".format(lines))
 
                     object = []
+
+                # For lists less than 1000 records
+                elif lines == numline-1:
+                    session.bulk_save_objects(object) #insertion to databse in bulk
+                    session.commit()
+                    print("Data Added")
+                    break
 
             except Exception as e:
                  print("Error at line {} ".format(e))
