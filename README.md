@@ -22,6 +22,8 @@ Please read the [Github Page](https://venkateshdas.github.io/sqlalchemy/) for be
 
 ### Usage : 
 
+Before running the main.py , please change the PostgreSQL server details in the db.py file. The username , password and IP address has to be changed to connect to your PostgreSQL server. 
+
     python main.py  -h --db_name DB_NAME --csv_file_path CSV_FILE_PATH
 
 #### Example : 
