@@ -175,7 +175,7 @@ The results on the experiment runs have been attached in the [Test images folder
 
 
 ### Future Work 
-- Reading the file in chunks and processing the chunks to efficiently use the memory. 
+- Reading the file in chunks and processing the chunks for computational and time efficiency. 
 - Finding an optimal number for bulk insertion based on memory availability. 
 - Looking for other ideas to better the approach. 
 
