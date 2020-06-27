@@ -40,9 +40,17 @@ DB_NAME is the database that has been created in the Postgres server to which th
 ## Procedure
 
 ### Intro 
-An image that explains the reason for the usage of the SQLAlchemy. It creates a connection between the program and the database for interaction. The Object Relational Mapping functionality helps to code in python without the hassle as in raw SQL and be more pythonic. 
+The image explains the purpose of the SQLAlchemy. It creates a connection between the program and the database for interaction. 
+The Object Relational Mapping functionality helps to code in python without the hassle as in raw SQL and be more pythonic. 
 
 ![sqlalchemy](test_images/session.png)
+
+
+### Dataset 
+
+The dataset or the CSV file contains 3 columns : name , grade and course. 
+
+![sqlalchemy](test_images/dataset.png)
 
 ### Database 
 
@@ -64,6 +72,7 @@ To solve the tasks I created two solutions.
 2. The second solution was to create a server locally using PostgreSQL. PostgreSQL provides a dashboard to manage the databases creates the transactions on persistent memory and clears the RAM.  
 
 The SQLite implementation is provided in the Colab notebook version. The PostgreSQL version is provided in the src folder. The usage of this folder is provided above. 
+
 
 ### Read dataset
 
@@ -125,6 +134,20 @@ The SQLite implementation is provided in the Colab notebook version. The Postgre
 
 	session.query(func.count(database_class.courses),database_class.name).filter_by(grade=1.0).group_by(database_class.name).having(func.count(database_class.courses)>= 3.0)` 
         
+
+### Output 
+
+The output provides the names of all the students who have 1.0 in atleast 3 courses in the format of (Number_of_courses , Name). Eg: (3 , Milana) 
+
+- The result of the query on the provided dataset of 9 data points. 
+
+![screenshot](test_images/test_screenshots/test_task_screenshot.png)
+
+- The result of the query on an extended version of the dataset with 12 data points. 
+![screenshot](test_images/test_screenshots/test_task_ext_screenshot.png)
+
+- The result of the query on a random dataset with 1 Million data points. Since it is randomly created with few subjects and names, most of the data points are repeated or not semantically correct. But it serves the purpose of testing the **Read, Insert and Query functionality** of our assessment. 
+![screenshot](test_images/test_screenshots/random_big_test.png)
 
 ### Observations 
 
