@@ -31,8 +31,8 @@ Please read the [Github Page](https://venkateshdas.github.io/sqlalchemy/) for be
 SQLAlchemy Task code
 
     optional arguments:
-      -h, --help            show this help message and exit
-      --db_name DB_NAME "Database name to be connected"
+      -h ,--help                    show this help message and exit
+      --db_name DB_NAME             "Database name to be connected"
       --csv_file_path CSV_FILE_PATH "File path of the CSV dataset"
 
 DB_NAME is the database that has been created in the Postgres server to which the user wants to connect for further processing. 
